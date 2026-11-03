@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Markup · Plagiarism checker</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="wrap">
+      <h1>Mark<span>up</span></h1>
+      <p>Find copied passages across assignments, or check them against a reference text.</p>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <div class="tabs" role="tablist" aria-label="Checking mode">
+      <button role="tab" id="tab-compare" aria-selected="true" aria-controls="panel-compare">Compare documents with each other</button>
+      <button role="tab" id="tab-reference" aria-selected="false" aria-controls="panel-reference">Check against a reference document</button>
+    </div>
+    <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+    <main id="panels"></main>
+  </div>
+  <script src="/static/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+flask>=3.0
+scikit-learn>=1.3
+numpy>=1.24
+scipy>=1.10
+pypdf>=4.0
+python-docx>=1.0
+# Optional - only needed after you train and drop in your Kaggle model (see models/README.md)
+# sentence-transformers>=2.7
