@@ -1,4 +1,3 @@
-"""End-to-end check through the real HTTP API. Run:  python tests/smoke_test.py"""
 import io, os, sys, tempfile
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 os.environ["PC_DB_PATH"] = os.path.join(tempfile.mkdtemp(), "test.db")

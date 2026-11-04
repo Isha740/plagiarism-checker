@@ -1,4 +1,3 @@
-"""Tiny SQLite store. Every browser gets a private workspace id (cookie), so users never see each other's files."""
 import os
 import sqlite3
 import time

@@ -1,4 +1,3 @@
-"""Flask app: upload / list / delete documents and run the two comparison modes."""
 import os
 import time
 import uuid
@@ -15,7 +14,7 @@ db.init()
 MODES = ("compare", "reference")
 
 
-# ------------------------------------------------------------------ workspace cookie
+# ------ workspace cookie
 def wid():
     w = request.cookies.get("wid")
     if not w or len(w) != 32 or not w.isalnum():
@@ -49,7 +48,7 @@ def limits(mode):
             "min_docs_to_compare": 2 if mode == "compare" else 1}
 
 
-# ------------------------------------------------------------------ pages / state
+# ------ pages / state
 @app.get("/")
 def index():
     return send_from_directory("static", "index.html")
@@ -67,7 +66,7 @@ def state():
                     "semantic_model": semantic.available()})
 
 
-# ------------------------------------------------------------------ upload / delete
+# ------- upload / delete
 @app.post("/api/upload")
 def upload():
     mode, kind = request.form.get("mode"), request.form.get("kind")
@@ -130,7 +129,7 @@ def delete(doc_id):
     return jsonify({"ok": True})
 
 
-# ------------------------------------------------------------------ compare
+# ------ compare
 def _pair_view(p):
     return {"other_id": p["other_id"], "other_name": p["other_name"],
             "score": pct(p["score"]), "factors": pct_factors(p["factors"])}

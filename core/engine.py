@@ -1,15 +1,3 @@
-"""Similarity engine.
-
-Scores are always from the point of view of the FIRST document ("how much of doc A shows up in doc B"),
-so A->B and B->A can differ slightly. Document-level factors (each 0..1):
-
-  cosine          TF-IDF cosine similarity of the full texts (overall vocabulary/topic overlap)
-  phrase_overlap  share of A's 3-word phrases that also appear in B (copied wording)
-  sentence_match  share of A's sentences that have a close match (>= threshold) in B
-  semantic        (only with a trained model) cosine of mean sentence embeddings
-
-Passage-level factors (top rows): cosine, phrase_overlap, sequence (difflib order-aware ratio), semantic.
-"""
 import re
 from difflib import SequenceMatcher
 
@@ -24,7 +12,6 @@ SENT_SPLIT = re.compile(r'(?<=[.!?])\s+(?=["\'(\[]?[A-Z0-9])')
 CHUNK = 256  # sentences processed per block (keeps memory flat for long documents)
 
 
-# ----------------------------------------------------------------------------- text prep
 def tokenize(s):
     return TOKEN_RE.findall(s.lower())
 

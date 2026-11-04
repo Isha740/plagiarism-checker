@@ -1,4 +1,3 @@
-"""Measure comparison time vs number of documents.  Run: python tests/benchmark.py [words_per_doc]"""
 import os, random, sys, time
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from core import engine  # noqa: E402

@@ -1,9 +1,3 @@
-"""Optional semantic model hook.
-
-If a sentence-transformers model folder exists at config.SEMANTIC_MODEL_DIR (e.g. the one you train on
-Kaggle and download), the engine automatically uses it to catch paraphrased copying.
-Without it, the checker runs purely on lexical methods and everything still works.
-"""
 import os
 
 import numpy as np

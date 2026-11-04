@@ -1,4 +1,3 @@
-"""Central settings. Change limits here (or override with environment variables)."""
 import os
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))

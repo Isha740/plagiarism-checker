@@ -1,4 +1,3 @@
-"""Turn an uploaded file (.txt / .pdf / .docx) into plain text."""
 import io
 import os
 import re

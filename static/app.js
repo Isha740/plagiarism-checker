@@ -31,7 +31,7 @@
     return data;
   }
 
-  // ---------------------------------------------------------------- layout
+  // ----layout
   const dropHTML = (mode, kind, multiple, title) => `
     <label class="drop" data-mode="${mode}" data-kind="${kind}">
       <input type="file" ${multiple ? "multiple" : ""} accept=".txt,.pdf,.docx" data-mode="${mode}" data-kind="${kind}">
@@ -86,7 +86,7 @@
     </section>`;
   }
 
-  // ---------------------------------------------------------------- state -> DOM
+  // ----- state -> DOM
   const liDoc = (d, mode) => `<li><span class="nm">${esc(d.name)}</span><span class="meta">${d.words.toLocaleString()} words</span>
       <button class="del" data-id="${d.id}" data-mode="${mode}" aria-label="Delete ${esc(d.name)}">Delete</button></li>`;
 
@@ -124,7 +124,7 @@
     renderLists(mode);
   }
 
-  // ---------------------------------------------------------------- actions
+  // ----- actions
   async function upload(mode, kind, files) {
     if (!files.length) return;
     const fd = new FormData();
@@ -159,7 +159,7 @@
     s.busy = false; updateRun(mode);
   }
 
-  // ---------------------------------------------------------------- results
+  // ------ results
   function renderResults(mode, data) {
     const out = $("results-" + mode);
     let html = "";
@@ -192,7 +192,7 @@
         ${chips(e.best.factors)}</div>` : `<p class="hint">No similar document found.</p>`;
   }
 
-  // ---------------------------------------------------------------- events
+  // ------ events
   function setTab(mode) {
     MODES.forEach(m => {
       $("tab-" + m).setAttribute("aria-selected", String(m === mode));
