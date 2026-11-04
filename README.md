@@ -106,7 +106,8 @@ Test set = PAWS + MRPC + QQP (PAWS is deliberately hard: same words, different m
 | TF-IDF cosine (lexical baseline) | 0.498 | 0.647 | 0.564 |
 | Pretrained MiniLM, no fine-tuning | 0.539 | 0.655 | 0.589 |
 | Fine-tuned MiniLM (bi-encoder) | 0.743 | 0.743 | 0.811 |
-| Fine-tuned cross-encoder (verifier) | _fill in from crossenc_metrics.json_ | | |
+| Fine-tuned cross-encoder (verifier) @ best-F1 threshold | 0.8912 | 0.8867 | 0.9549 |
+| Fine-tuned cross-encoder (verifier) @ strict threshold | 0.8878 | 0.8856 | 0.9549 |
 
 ## REST API
 | Method | Route | Purpose |

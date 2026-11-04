@@ -46,7 +46,8 @@ Switch off: `PC_USE_SEMANTIC=0`, `PC_USE_VERIFIER=0`. Custom folders: `PC_SEMANT
 | TF-IDF cosine baseline | 0.15 | 0.498 | 0.481 | 0.991 | 0.647 | 0.564 |
 | MiniLM, not fine-tuned | 0.74 | 0.539 | 0.502 | 0.939 | 0.655 | 0.589 |
 | MiniLM, fine-tuned | 0.69 | 0.743 | 0.693 | 0.801 | 0.743 | 0.811 |
-| Cross-encoder, fine-tuned | _fill in_ | | | | | |
+| Fine-tuned cross-encoder (verifier) @ best-F1 threshold | 0.49 | 0.8912 | 0.8592 | 0.916 | 0.8867 | 0.9549 |
+| Fine-tuned cross-encoder (verifier) @ strict threshold | 0.34 | 0.8878 | 0.8422 | 0.9338 | 0.8856 | 0.9549 |
 
 The baselines are near chance because PAWS pairs all overlap heavily; that does not mean word matching fails on
 ordinary copy-paste, which is a different, easier task.
